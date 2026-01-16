@@ -4,7 +4,8 @@
   "description": "TBA",
   "main": "index.js",
   "scripts": {
-    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+    "build": "npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npx serve -s frontend/dist"
   },
   "repository": {
     "type": "git",
