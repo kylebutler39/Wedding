@@ -136,4 +136,29 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-wedding-cream);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-wedding-terracotta);
+    border-radius: 6px;
+    border: 2px solid var(--color-wedding-cream);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-wedding-terracotta-dark);
+  }
+  
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-wedding-terracotta) var(--color-wedding-cream);
+  }
 }

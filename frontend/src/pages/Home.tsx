@@ -6,10 +6,13 @@ export function Home() {
   return (
     <div className="min-h-screen bg-wedding-cream">
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/example.png')" }}
-        />
+        <div className="absolute inset-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat "
+            style={{ backgroundImage: "url('/example.png')" }}
+          />
+          <div className="absolute inset-0 bg-black/50" /> {/* Adds dark overlay */}
+        </div>
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/30 to-black/50" />
         
@@ -37,10 +40,10 @@ export function Home() {
                 When
               </h3>
               <p className="font-info text-xl text-wedding-sage-dark">
-                Saturday, June 15, 2026
+                March XX, 2027
               </p>
               <p className="font-info text-wedding-charcoal mt-1">
-                4:00 PM
+                X:00 PM
               </p>
             </div>
             

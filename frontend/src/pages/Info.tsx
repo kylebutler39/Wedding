@@ -3,8 +3,23 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { ScheduleItem } from '@/utils/Tools'
 
 export function Info() {
+  const colorPalette = [
+    { name: 'Terracotta', hex: '#c89872', class: 'bg-wedding-terracotta' },
+    { name: 'Cream', hex: '#f5f1ed', class: 'bg-wedding-cream' },
+    { name: 'Charcoal', hex: '#4a4a43', class: 'bg-wedding-charcoal' },
+    { name: 'Sage', hex: '#9b9e8e', class: 'bg-wedding-sage' },
+    { name: 'Olive', hex: '#6b6e5c', class: 'bg-wedding-sage-dark' },
+  ]
+
   return (
     <div className="min-h-screen bg-linear-to-b from-wedding-cream to-wedding-cream-dark pt-16 pb-16">
       <div className="container mx-auto px-6 max-w-5xl">
@@ -58,6 +73,23 @@ export function Info() {
                 <p className="text-sm text-foreground">Info about parking to be inserted.</p>
                 <p className="text-sm text-wedding-sage-dark mt-1">Accessible parking near main entrance</p>
               </div>
+
+            <Separator className="bg-wedding-terracotta-dark/20" />
+              
+              <div>
+                <h3 className="font-medium text-wedding-charcoal mb-2">Location Map</h3>
+                <div className="w-full h-64 rounded-lg overflow-hidden border-2 border-wedding-terracotta-dark/20">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.447820118029!2d-121.58784279999999!3d38.2691108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ab48b824ed3a3%3A0xaa13cdbe8ee84038!2sGrand%20Island%20Mansion!5e0!3m2!1sen!2sus!4v1768699393233!5m2!1sen!2sus" width="600" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <Button 
+                  variant="outline" 
+                  className="w-full mt-3 border-wedding-terracotta text-wedding-terracotta hover:bg-wedding-terracotta hover:text-white"
+                  onClick={() => window.open('https://www.google.com/maps/place/Grand+Island+Mansion/@38.2691108,-121.5878428,17z/data=!3m1!4b1!4m6!3m5!1s0x809ab48b824ed3a3:0xaa13cdbe8ee84038!8m2!3d38.2691108!4d-121.5878428!16s%2Fg%2F1tg6vyrs?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D', '_blank')}
+                >
+                  Open in Google Maps
+                </Button>
+              </div>
+
             </CardContent>
           </Card>
 
@@ -82,13 +114,23 @@ export function Info() {
               
               <div>
                 <h3 className="font-medium text-wedding-charcoal mb-3">Color Palette</h3>
-                <div className="flex gap-2">
-                  <div className="w-12 h-12 rounded-full bg-wedding-terracotta border-2 border-white shadow-sm" title="Terracotta"></div>
-                  <div className="w-12 h-12 rounded-full bg-wedding-cream border-2 border-white shadow-sm" title="Cream"></div>
-                  <div className="w-12 h-12 rounded-full bg-wedding-charcoal border-2 border-white shadow-sm" title="Charcoal"></div>
-                  <div className="w-12 h-12 rounded-full bg-wedding-sage border-2 border-white shadow-sm" title="Sage"></div>
-                  <div className="w-12 h-12 rounded-full bg-wedding-sage-dark border-2 border-white shadow-sm" title="Olive"></div>
-                </div>
+                <TooltipProvider>
+                  <div className="flex gap-2">
+                    {colorPalette.map((color) => (
+                      <Tooltip key={color.name}>
+                        <TooltipTrigger asChild>
+                          <div 
+                            className={`w-12 h-12 rounded-full ${color.class} border-2 border-white shadow-sm cursor-pointer hover:scale-110 transition-transform`}
+                          />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="font-medium">{color.name}</p>
+                          <p className="text-xs">{color.hex}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    ))}
+                  </div>
+                </TooltipProvider>
                 <p className="text-sm text-wedding-sage-dark mt-2">Our wedding colors for inspiration</p>
               </div>
               
@@ -332,20 +374,6 @@ export function Info() {
         </div>
 
       </div>
-    </div>
-  )
-}
-
-// Helper Components
-function ScheduleItem({ time, event }: { time: string; event: string }) {
-  return (
-    <div className="flex items-baseline gap-4">
-      <Badge variant="secondary" className="min-w-20 justify-center bg-wedding-terracotta/10 text-wedding-terracotta hover:bg-wedding-terracotta/20">
-        {time}
-      </Badge>
-      <span className="text-foreground">
-        {event}
-      </span>
     </div>
   )
 }
