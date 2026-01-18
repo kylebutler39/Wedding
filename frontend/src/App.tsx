@@ -8,7 +8,7 @@ import { QnA } from './pages/QnA'
 import Info from './pages/Info'
 import { Footer } from './layout/Footer'
 import { ScrollToTop } from './utils/Tools'
-import NotFoundPage from './pages/NotFoundPage'
+import { NotFoundPage } from './pages/NotFoundPage'
 
 function App() {
 
