@@ -8,6 +8,7 @@ import { QnA } from './pages/QnA'
 import Info from './pages/Info'
 import { Footer } from './layout/Footer'
 import { ScrollToTop } from './utils/Tools'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
               <Route path='/rsvp' element={<RSVP/>}/>
               <Route path='/qa' element={<QnA/>}/>
               <Route path='/info' element={<Info/>}/>
+              <Route path='*' element={<NotFoundPage/>}/>
             </Routes>
           </main>
           <Footer/>
