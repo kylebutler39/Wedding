@@ -9,6 +9,7 @@ import Info from './pages/Info'
 import { Footer } from './layout/Footer'
 import { ScrollToTop } from './utils/Tools'
 import { NotFoundPage } from './pages/NotFoundPage'
+import { Toaster } from "@/components/ui/sonner" //used for contact page when submitting the form
 
 function App() {
 
@@ -30,6 +31,12 @@ function App() {
           </main>
           <Footer/>
       </BrowserRouter>
+      <Toaster 
+        position="top-right"
+        closeButton 
+        richColors
+        expand={false} 
+      />
     </>
   )
 }
