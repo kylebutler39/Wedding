@@ -57,8 +57,7 @@ export function NotFoundPage() {
             <Button
               onClick={() => window.history.back()}
               variant="outline"
-              className="gap-2 border-wedding-terracotta text-wedding-charcoal hover:bg-wedding-terracotta hover:text-wedding-cream"
-              style={{ fontFamily: 'var(--font-montserrat)' }}
+              className="gap-2 border-wedding-terracotta text-wedding-charcoal hover:bg-wedding-terracotta hover:text-wedding-cream font-info"
             >
               <ArrowLeft className="w-4 h-4" />
               Go Back
@@ -66,8 +65,7 @@ export function NotFoundPage() {
             
             <Button
               onClick={() => window.location.href = '/'}
-              className="gap-2 bg-wedding-terracotta hover:bg-wedding-terracotta-dark text-wedding-cream"
-              style={{ fontFamily: 'var(--font-montserrat)' }}
+              className="gap-2 bg-wedding-terracotta hover:bg-wedding-terracotta-dark text-wedding-cream font-info"
             >
               <Home className="w-4 h-4" />
               Return Home

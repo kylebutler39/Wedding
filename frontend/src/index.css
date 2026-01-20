@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+@custom-variant hover (&:hover);
 @import "tw-animate-css";
 
 @theme {
@@ -7,7 +8,6 @@
   --font-couple-name: "Great Vibes", cursive;
   --font-nav: "Montserrat", sans-serif;
   --font-info: "Cormorant Garamond", serif;
-  --font-montserrat: "Montserrat", sans-serif;
   
   /* Wedding Color Palette */
   --color-wedding-terracotta: #c89872;

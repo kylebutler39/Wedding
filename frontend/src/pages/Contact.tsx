@@ -63,8 +63,13 @@ export function Contact() {
         setIsSubmitting(true);
         setStatus({ type: '', message: '' });
 
+        let notificationSent = false;
+        let autoReplySent = false;
+
+        // Send notification email to you (the couple)
         try {
-            const result = await emailjs.send(
+            console.log('Sending notification email...');
+            const notificationResult = await emailjs.send(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 {
@@ -83,20 +88,74 @@ export function Contact() {
                 },
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
+            console.log('✅ Notification email sent:', notificationResult);
+            notificationSent = true;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (error: any) {
+            console.error('❌ Notification email failed:', error);
+            console.error('Error details:', {
+                status: error?.status,
+                text: error?.text,
+                message: error?.message
+            });
+        }
 
-            if (result.text === 'OK') {
-                setStatus({
-                    type: 'success',
-                    message: 'Thank you! Your message has been sent successfully.'
+        // Send auto-reply to the sender
+        try {
+            console.log('Sending auto-reply email to:', formData.from_email);
+            console.log('Auto-reply data:', {
+                to_email: formData.from_email,
+                name: formData.from_name,
+                message: formData.message
+            });
+            
+            const autoReplyResult = await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
+                {
+                    to_email: formData.from_email,
+                    name: formData.from_name,
+                    message: formData.message,
+                },
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+            console.log('✅ Auto-reply email sent:', autoReplyResult);
+            autoReplySent = true;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (error: any) {
+            console.error('❌ Auto-reply email failed:', error);
+            console.error('Error details:', {
+                status: error?.status,
+                text: error?.text,
+                message: error?.message
+            });
+        }
+
+        setIsSubmitting(false);
+
+        // Determine success based on what was sent
+        if (notificationSent) {
+            setStatus({
+                type: 'success',
+                message: 'Thank you! Your message has been sent successfully.'
+            });
+            
+            if (autoReplySent) {
+                toast.success('Message Sent Successfully!', {
+                    description: `Thank you, ${formData.from_name}! We've received your message and sent you a confirmation email.`,
+                    duration: 5000,
                 });
+            } else {
                 toast.success('Message Sent Successfully!', {
                     description: `Thank you, ${formData.from_name}! We've received your message and will get back to you soon.`,
                     duration: 5000,
                 });
-                setFormData({ from_name: '', from_email: '', message: '' });
-                setEmailError('');
+                console.warn('⚠️ Auto-reply failed but notification was sent');
             }
-        } catch (error) {
+            
+            setFormData({ from_name: '', from_email: '', message: '' });
+            setEmailError('');
+        } else {
             setStatus({
                 type: 'error',
                 message: 'Oops! Something went wrong. Please try again.'
@@ -105,9 +164,6 @@ export function Contact() {
                 description: "We're experiencing technical difficulties. Please try again or contact us directly via email.",
                 duration: 6000,
             });
-            console.error('EmailJS Error:', error);
-        } finally {
-            setIsSubmitting(false);
         }
     };
 
@@ -126,7 +182,7 @@ export function Contact() {
                     <div>
                         <label 
                             htmlFor="from_name" 
-                            className="block text-sm font-medium text-wedding-charcoal mb-2 font-montserrat"
+                            className="block text-sm font-medium text-wedding-charcoal mb-2 font-info"
                         >Your Name</label>
                         <input
                             type="text"
@@ -144,7 +200,7 @@ export function Contact() {
                     <div>
                         <label 
                             htmlFor="from_email" 
-                            className="block text-sm font-medium text-wedding-charcoal mb-2 font-montserrat"
+                            className="block text-sm font-medium text-wedding-charcoal mb-2 font-info"
                         >Your Email</label>
                         <input
                             type="email"
@@ -167,7 +223,7 @@ export function Contact() {
                     <div>
                         <label 
                             htmlFor="message" 
-                            className="block text-sm font-medium text-wedding-charcoal mb-2 font-montserrat"
+                            className="block text-sm font-medium text-wedding-charcoal mb-2 font-info"
                         >Message</label>
                         <textarea
                             id="message"
@@ -181,7 +237,7 @@ export function Contact() {
                         />
                     </div>
 
-                    {/* Status Message - Enhanced with icons */}
+                    {/* Status Message */}
                     {status.message && (
                         <div
                             className={`p-4 rounded-lg font-info flex items-start gap-3 ${
@@ -203,7 +259,7 @@ export function Contact() {
                     <button
                         onClick={handleSubmit}
                         disabled={isSubmitting || !isFormValid}
-                        className="w-full bg-wedding-terracotta hover:bg-wedding-terracotta-dark text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg font-montserrat"
+                        className="w-full bg-wedding-terracotta hover:bg-wedding-terracotta-dark text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg font-info"
                     >
                         {isSubmitting ? (
                             <span className="flex items-center justify-center gap-2">
