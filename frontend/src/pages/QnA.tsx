@@ -26,7 +26,7 @@ export function QnA() {
     return (
         <div className="min-h-screen bg-background">
             {/* Hero Section */}
-            <div className="bg-linear-to-b from-primary to-primary/80 text-primary-foreground py-20 px-4">
+            <div className="bg-linear-to-b from-wedding-terracotta to-wedding-terracotta-dark text-primary-foreground py-20 px-4">
                 <div className="container mx-auto max-w-4xl text-center">
                 <h1 className="text-5xl md:text-6xl mb-4 font-couple-name">
                     Questions & Answers

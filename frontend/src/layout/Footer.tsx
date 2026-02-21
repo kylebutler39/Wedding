@@ -8,7 +8,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-wedding-charcoal text-wedding-cream mt-20">
+    <footer className="bg-wedding-charcoal text-wedding-cream">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -139,12 +139,12 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <Separator className="bg-wedding-sage/20" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-nav">
-          <p className="text-wedding-cream/70">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm font-nav">
+          <p className="text-wedding-cream/70 text-center sm:text-left order-2 sm:order-1">
             © {currentYear} Glieselle & Kyle. Made by Elaeth Jonah Lilagan. All rights reserved.
           </p>
-          <p className="text-wedding-cream/70 flex items-center gap-2">
+          <p className="text-wedding-cream/70 flex items-center gap-2 order-1 sm:order-2 whitespace-nowrap">
             Made with <Heart className="w-4 h-4 text-wedding-terracotta fill-wedding-terracotta animate-pulse" /> for our special day
           </p>
         </div>

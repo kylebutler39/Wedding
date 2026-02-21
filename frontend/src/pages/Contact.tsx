@@ -67,69 +67,49 @@ export function Contact() {
         let autoReplySent = false;
 
         // Send notification email to you (the couple)
-        try {
-            console.log('Sending notification email...');
-            const notificationResult = await emailjs.send(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                {
-                    name: formData.from_name,
-                    email: formData.from_email,
-                    message: formData.message,
-                    subject: `New Message from ${formData.from_name} via Website`,
-                    time: new Date().toLocaleString('en-US', {
-                        month: 'long',
-                        day: 'numeric',
-                        year: 'numeric',
-                        hour: 'numeric',
-                        minute: '2-digit',
-                        hour12: true
-                    })
-                },
-                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-            );
-            console.log('✅ Notification email sent:', notificationResult);
-            notificationSent = true;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        } catch (error: any) {
-            console.error('❌ Notification email failed:', error);
-            console.error('Error details:', {
-                status: error?.status,
-                text: error?.text,
-                message: error?.message
-            });
-        }
+        console.log('Sending notification email...');
+        const notificationResult = await emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            {
+                name: formData.from_name,
+                email: formData.from_email,
+                message: formData.message,
+                subject: `New Message from ${formData.from_name} via Website`,
+                time: new Date().toLocaleString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                })
+            },
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+        console.log('✅ Notification email sent:', notificationResult);
+        notificationSent = true;
 
         // Send auto-reply to the sender
-        try {
-            console.log('Sending auto-reply email to:', formData.from_email);
-            console.log('Auto-reply data:', {
+        console.log('Sending auto-reply email to:', formData.from_email);
+        console.log('Auto-reply data:', {
+            to_email: formData.from_email,
+            name: formData.from_name,
+            message: formData.message
+        });
+        
+        const autoReplyResult = await emailjs.send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
+            {
                 to_email: formData.from_email,
                 name: formData.from_name,
-                message: formData.message
-            });
-            
-            const autoReplyResult = await emailjs.send(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
-                {
-                    to_email: formData.from_email,
-                    name: formData.from_name,
-                    message: formData.message,
-                },
-                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-            );
-            console.log('✅ Auto-reply email sent:', autoReplyResult);
-            autoReplySent = true;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        } catch (error: any) {
-            console.error('❌ Auto-reply email failed:', error);
-            console.error('Error details:', {
-                status: error?.status,
-                text: error?.text,
-                message: error?.message
-            });
-        }
+                message: formData.message,
+            },
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+        console.log('✅ Auto-reply email sent:', autoReplyResult);
+        autoReplySent = true;
 
         setIsSubmitting(false);
 
