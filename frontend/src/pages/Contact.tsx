@@ -48,27 +48,18 @@ export function Contact() {
                         formData.message.trim() !== '';
 
     const handleSubmit = async () => {
-        if (!isValidEmail(formData.from_email)) {
-            setStatus({
-                type: 'error',
-                message: 'Please enter a valid email address.'
-            });
-            toast.error('Invalid Email', {
-                description: 'Please enter a valid email address.',
-                duration: 4000,
-            });
-            return;
-        }
+    if (!isValidEmail(formData.from_email)) {
+        setStatus({ type: 'error', message: 'Please enter a valid email address.' });
+        toast.error('Invalid Email', { description: 'Please enter a valid email address.', duration: 4000 });
+        return;
+    }
 
-        setIsSubmitting(true);
-        setStatus({ type: '', message: '' });
+    setIsSubmitting(true);
+    setStatus({ type: '', message: '' });
 
-        let notificationSent = false;
-        let autoReplySent = false;
-
-        // Send notification email to you (the couple)
-        console.log('Sending notification email...');
-        const notificationResult = await emailjs.send(
+    try {
+        // Send notification email
+        await emailjs.send(
             import.meta.env.VITE_EMAILJS_SERVICE_ID,
             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
             {
@@ -77,75 +68,50 @@ export function Contact() {
                 message: formData.message,
                 subject: `New Message from ${formData.from_name} via Website`,
                 time: new Date().toLocaleString('en-US', {
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric',
-                    hour: 'numeric',
-                    minute: '2-digit',
-                    hour12: true
+                    month: 'long', day: 'numeric', year: 'numeric',
+                    hour: 'numeric', minute: '2-digit', hour12: true
                 })
             },
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
-        console.log('✅ Notification email sent:', notificationResult);
-        notificationSent = true;
 
-        // Send auto-reply to the sender
-        console.log('Sending auto-reply email to:', formData.from_email);
-        console.log('Auto-reply data:', {
-            to_email: formData.from_email,
-            name: formData.from_name,
-            message: formData.message
-        });
-        
-        const autoReplyResult = await emailjs.send(
-            import.meta.env.VITE_EMAILJS_SERVICE_ID,
-            import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
-            {
-                to_email: formData.from_email,
-                name: formData.from_name,
-                message: formData.message,
-            },
-            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-        );
-        console.log('✅ Auto-reply email sent:', autoReplyResult);
-        autoReplySent = true;
-
-        setIsSubmitting(false);
-
-        // Determine success based on what was sent
-        if (notificationSent) {
-            setStatus({
-                type: 'success',
-                message: 'Thank you! Your message has been sent successfully.'
-            });
-            
-            if (autoReplySent) {
-                toast.success('Message Sent Successfully!', {
-                    description: `Thank you, ${formData.from_name}! We've received your message and sent you a confirmation email.`,
-                    duration: 5000,
-                });
-            } else {
-                toast.success('Message Sent Successfully!', {
-                    description: `Thank you, ${formData.from_name}! We've received your message and will get back to you soon.`,
-                    duration: 5000,
-                });
-                console.warn('⚠️ Auto-reply failed but notification was sent');
-            }
-            
-            setFormData({ from_name: '', from_email: '', message: '' });
-            setEmailError('');
-        } else {
-            setStatus({
-                type: 'error',
-                message: 'Oops! Something went wrong. Please try again.'
-            });
-            toast.error('Unable to Send Message', {
-                description: "We're experiencing technical difficulties. Please try again or contact us directly via email.",
-                duration: 6000,
-            });
+        // Send auto-reply (non-fatal if it fails)
+        let autoReplySent = false;
+        try {
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
+                { to_email: formData.from_email, name: formData.from_name, message: formData.message },
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+            autoReplySent = true;
+        } catch (autoReplyErr) {
+            console.warn('Auto-reply failed:', autoReplyErr);
         }
-    };
+
+        // Both paths lead here now
+        setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+        toast.success('Message Sent Successfully!', {
+            description: autoReplySent
+                ? `Thank you, ${formData.from_name}! We've received your message and sent you a confirmation email.`
+                : `Thank you, ${formData.from_name}! We've received your message and will get back to you soon.`,
+            duration: 5000,
+        });
+
+        setFormData({ from_name: '', from_email: '', message: '' });
+        setEmailError('');
+
+    } catch (err) {
+        console.error('Failed to send message:', err);
+        setStatus({ type: 'error', message: 'Oops! Something went wrong. Please try again.' });
+        toast.error('Unable to Send Message', {
+            description: "We're experiencing technical difficulties. Please try again or contact us directly via email.",
+            duration: 6000,
+        });
+    } finally {
+        setIsSubmitting(false);
+    }
+};
 
     return (
         <div className="min-h-screen bg-wedding-cream">
