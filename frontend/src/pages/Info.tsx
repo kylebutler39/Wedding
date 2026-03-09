@@ -35,7 +35,7 @@ export function Info() {
 
         {/* Info Cards Grid */}
         <div className="space-y-8">
-          
+
           {/* Venue & Timing */}
           <Card className="border-wedding-terracotta-dark/20 bg-card/60 backdrop-blur-sm">
             <CardHeader>
@@ -52,37 +52,36 @@ export function Info() {
                 <p className="text-foreground">The Grand Island Mansion</p>
                 <p className="text-sm text-wedding-sage-dark">13415 Grand Island Rd, Walnut Grove, CA 95690</p>
                 <Badge className="mt-2 bg-wedding-terracotta hover:bg-wedding-terracotta-dark text-white">
-                  TBA
+                  6:00 PM
                 </Badge>
               </div>
-              
+
               <Separator className="bg-wedding-terracotta-dark/20" />
-              
+
               <div>
                 <h3 className="font-medium text-wedding-charcoal mb-2">Reception</h3>
-                <p className="text-foreground">Same location - Garden Pavilion</p>
+                <p className="text-foreground">Same location</p>
                 <Badge className="mt-2 bg-wedding-terracotta hover:bg-wedding-terracotta-dark text-white">
-                  TBA
+                  Immediately following ceremony
                 </Badge>
               </div>
-              
+
               <Separator className="bg-wedding-terracotta-dark/20" />
-              
+
               <div>
                 <h3 className="font-medium text-wedding-charcoal mb-2">Parking</h3>
-                <p className="text-sm text-foreground">Info about parking to be inserted.</p>
-                <p className="text-sm text-wedding-sage-dark mt-1">Accessible parking near main entrance</p>
+                <p className="text-sm text-foreground">Ample parking on site</p>
               </div>
 
             <Separator className="bg-wedding-terracotta-dark/20" />
-              
+
               <div>
                 <h3 className="font-medium text-wedding-charcoal mb-2">Location Map</h3>
                 <div className="w-full h-64 rounded-lg overflow-hidden border-2 border-wedding-terracotta-dark/20">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.447820118029!2d-121.58784279999999!3d38.2691108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ab48b824ed3a3%3A0xaa13cdbe8ee84038!2sGrand%20Island%20Mansion!5e0!3m2!1sen!2sus!4v1768699393233!5m2!1sen!2sus" className='w-full h-full' style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="w-full mt-3 border-wedding-terracotta text-wedding-terracotta hover:bg-wedding-terracotta hover:text-white"
                   onClick={() => window.open('https://www.google.com/maps/place/Grand+Island+Mansion/@38.2691108,-121.5878428,17z/data=!3m1!4b1!4m6!3m5!1s0x809ab48b824ed3a3:0xaa13cdbe8ee84038!8m2!3d38.2691108!4d-121.5878428!16s%2Fg%2F1tg6vyrs?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D', '_blank')}
                 >
@@ -109,9 +108,9 @@ export function Info() {
                 <p className="font-medium text-foreground">Insert how formal the wedding is...</p>
                 <p className="text-sm mt-2 text-muted-foreground">Insert what colors to be put here, what theme colors. For now, euro botanical luxury</p>
               </div>
-              
+
               <Separator className="bg-wedding-terracotta-dark/20" />
-              
+
               <div>
                 <h3 className="font-medium text-wedding-charcoal mb-3">Color Palette</h3>
                 <TooltipProvider>
@@ -119,7 +118,7 @@ export function Info() {
                     {colorPalette.map((color) => (
                       <Tooltip key={color.name}>
                         <TooltipTrigger asChild>
-                          <div 
+                          <div
                             className={`w-12 h-12 rounded-full ${color.class} border-2 border-white shadow-sm cursor-pointer hover:scale-110 transition-transform`}
                           />
                         </TooltipTrigger>
@@ -133,9 +132,9 @@ export function Info() {
                 </TooltipProvider>
                 <p className="text-sm text-wedding-sage-dark mt-2">Our wedding colors for inspiration</p>
               </div>
-              
+
               <Separator className="bg-wedding-terracotta-dark/20" />
-              
+
               <div>
                 <h3 className="font-medium text-wedding-charcoal mb-2">Weather Note</h3>
                 <p className="text-sm text-muted-foreground">Insert a reminder for guests of extra clothes to wear and the temperature of the location</p>
@@ -156,13 +155,11 @@ export function Info() {
             <CardContent className="font-nav">
               <div className="space-y-3">
                 <p>This is not the real schedule!</p>
-                <ScheduleItem time="3:30 PM" event="Guest Arrival" />
-                <ScheduleItem time="4:00 PM" event="Ceremony Begins" />
-                <ScheduleItem time="4:30 PM" event="Cocktail Hour" />
-                <ScheduleItem time="5:30 PM" event="Reception & Dinner" />
-                <ScheduleItem time="7:00 PM" event="First Dance & Toasts" />
-                <ScheduleItem time="8:00 PM" event="Dancing & Celebration" />
-                <ScheduleItem time="10:00 PM" event="Sparkler Send-Off" />
+                <ScheduleItem time="5:30 PM" event="Guest Arrival" />
+                <ScheduleItem time="6:00 PM" event="Ceremony Begins" />
+                <ScheduleItem time="~6:30 PM" event="Cocktail Hour" />
+                <ScheduleItem time="7:30 PM" event="Reception & Dinner" />
+                <ScheduleItem time="11:00 PM" event="Wedding End" />
               </div>
             </CardContent>
           </Card>
@@ -194,7 +191,7 @@ export function Info() {
                       <p className="text-xs text-wedding-sage-dark mt-2">Book by TIME OF EXPIRED DATE</p>
                     </CardContent>
                   </Card>
-                  
+
                   <Card className="border-l-4 border-l-wedding-terracotta border-wedding-terracotta-dark/20">
                     <CardContent className="pt-4">
                       <p className="font-medium text-wedding-charcoal">Hotel 2</p>
@@ -210,9 +207,9 @@ export function Info() {
                   </Card>
                 </div>
               </div>
-              
+
               <Separator className="bg-wedding-terracotta-dark/20" />
-              
+
               <div>
                 <h3 className="font-medium text-wedding-charcoal mb-2">Shuttle Service</h3>
                 <p className="text-sm text-foreground">Complimentary shuttle service from X LOCATION to the venue.</p>
@@ -237,13 +234,13 @@ export function Info() {
                 <p className="text-foreground">Sacramento International Airport (SMF)</p>
                 <p className="text-sm text-wedding-sage-dark">Approximately X minutes from venue</p>
               </div>
-              
+
               <Separator className="bg-wedding-terracotta-dark/20" />
-              
+
               <div>
                 <h3 className="font-medium text-wedding-charcoal mb-2">Getting Around</h3>
-                <p className="text-sm text-foreground">Uber and Lyft are readily available throughout Sacramento.</p>
-                <p className="text-sm text-wedding-sage-dark mt-1">We encourage ridesharing for a safe celebration!</p>
+                <p className="text-sm text-foreground">Uber and Lyft are scarecely available due to location. However, you may be able to arrange a rideshair pickup ahead of time.</p>
+                <p className="text-sm text-wedding-sage-dark mt-1">We encourage carpooling for a safe celebration!</p>
               </div>
             </CardContent>
           </Card>
@@ -294,24 +291,17 @@ export function Info() {
                 <h3 className="font-medium text-wedding-charcoal mb-2">Unplugged Ceremony</h3>
                 <p className="text-sm text-foreground">We kindly request an unplugged ceremony. Please silence your phones and enjoy the moment with us! Our photographer will capture all the special memories.</p>
               </div>
-              
+
               <Separator className="bg-wedding-terracotta-dark/20" />
-              
+
               <div>
                 <h3 className="font-medium text-wedding-charcoal mb-2">Celebration Style</h3>
-                <p className="text-sm text-foreground">This will be an adults-only celebration to allow all guests to relax and enjoy.</p>
-              </div>
-              
-              <Separator className="bg-wedding-terracotta-dark/20" />
-              
-              <div>
-                <h3 className="font-medium text-wedding-charcoal mb-2">Dietary Accommodations</h3>
-                <p className="text-sm text-foreground">Please let us know of any dietary restrictions in your RSVP. We'll work with our caterer to accommodate all needs.</p>
+                <p className="text-sm text-foreground">This will be an all ages celebration to allow all guests to join in the celebration.</p>
               </div>
             </CardContent>
           </Card>
 
-          {/* Contact & Social */}
+          {/* Contact */}
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-wedding-terracotta-dark/20 bg-card/60 backdrop-blur-sm">
               <CardHeader>
@@ -329,34 +319,14 @@ export function Info() {
                   <p className="text-sm text-wedding-sage-dark">jane.doe@gmail.com</p>
                   <p className="text-sm text-wedding-sage-dark">(123) 456-7890</p>
                 </div>
-                
+
                 <Separator className="bg-wedding-terracotta-dark/20" />
-                
+
                 <div>
                   <h3 className="font-medium text-wedding-charcoal mb-2">Day-of Contact</h3>
                   <p className="text-sm text-foreground">(123) 456-7899</p>
                   <p className="text-sm text-wedding-sage-dark">Available from 2:00 PM</p>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-wedding-terracotta-dark/20 bg-card/60 backdrop-blur-sm">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Hash className="w-6 h-6 text-wedding-terracotta" />
-                  <CardTitle className="font-info text-3xl text-wedding-charcoal">
-                    Share the Love
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="font-nav">
-                <h3 className="font-medium text-wedding-charcoal mb-2">Wedding Hashtag</h3>
-                <p className="text-2xl font-couple-name text-wedding-terracotta text-center my-3">
-                  #HappilyMarried
-                </p>
-                <p className="text-sm text-center text-wedding-sage-dark">
-                  Tag your photos so we can see the day through your eyes!
-                </p>
               </CardContent>
             </Card>
           </div>
@@ -369,7 +339,7 @@ export function Info() {
             We can't wait to celebrate with you!
           </p>
           <p className="font-nav text-wedding-sage-dark">
-            See you on January 16, 2026
+            See you on April 30, 2027
           </p>
         </div>
 

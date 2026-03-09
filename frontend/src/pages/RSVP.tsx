@@ -25,7 +25,7 @@ export function RSVP() {
                     <div className="bg-white rounded-lg shadow-xl p-8 md:p-12 border border-wedding-terracotta/20">
                         <div className="text-center mb-8 font-info">
                             <p className="text-lg text-wedding-charcoal mb-6 leading-relaxed">Your presence would mean the world to us. Please let us know if you'll be able to celebrate with us by filling out our RSVP form.</p>
-                            <p className="text-md text-wedding-sage mb-8">Kindly respond by [Your RSVP Date]</p>
+                            <p className="text-md text-wedding-sage mb-8">Kindly respond by February 01, 2027</p>
                         </div>
 
                         {/* CTA Button */}

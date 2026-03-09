@@ -20,7 +20,7 @@ export function Home() {
             />
             <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-black/60" />
           </div>
-          
+
           <div className="relative z-10 text-center px-4 animate-fade-in">
             <p className="font-nav text-white/90 text-sm md:text-base tracking-[0.3em] uppercase mb-6 drop-shadow-lg">
               We're Getting Married
@@ -34,7 +34,7 @@ export function Home() {
               <div className="h-px w-16 bg-white/60"></div>
             </div>
             <p className="font-info text-2xl md:text-3xl text-white/95 mb-12 drop-shadow-lg">
-              March XX, 2027
+              April 30, 2027
             </p>
             <Link to="/rsvp">
               <Button className="bg-wedding-terracotta text-white font-nav font-semibold px-10 py-7 text-lg rounded-full hover:bg-wedding-terracotta-dark transition-all duration-300 uppercase tracking-wider shadow-2xl hover:shadow-wedding-terracotta/50 hover:scale-105">
@@ -50,7 +50,7 @@ export function Home() {
           <section className="py-24 bg-white relative overflow-hidden">
             <div className="absolute top-0 left-0 w-64 h-64 bg-wedding-cream/50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-wedding-terracotta/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-            
+
             <div className="container mx-auto px-4 relative z-10">
               <div className="text-center mb-16">
                 <h2 className="font-couple-name text-6xl md:text-7xl text-wedding-terracotta mb-4">
@@ -69,20 +69,20 @@ export function Home() {
                     When
                   </h3>
                   <p className="font-info text-2xl font-semibold text-wedding-terracotta mb-2">
-                    March XX, 2027
+                    April 30, 2027
                   </p>
                   <div className="flex items-center justify-center gap-2 text-wedding-charcoal mt-3">
                     <Clock className="w-4 h-4" />
                     <p className="font-info text-lg">
-                      X:00 PM
+                      6:00 PM
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Where */}
                 <div className="group bg-wedding-cream/50 backdrop-blur-sm p-8 rounded-2xl text-center hover:bg-wedding-cream transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-wedding-terracotta/10">
                   <a href='https://www.google.com/maps/place/Grand+Island+Mansion/@38.2691108,-121.5878428,17z/data=!3m1!4b1!4m6!3m5!1s0x809ab48b824ed3a3:0xaa13cdbe8ee84038!8m2!3d38.2691108!4d-121.5878428!16s%2Fg%2F1tg6vyrs?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D' target="_blank" rel="noopener noreferrer">
-                    <div className="w-20 h-20 bg-linear-to-br from-wedding-terracotta to-wedding-terracotta-dark rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg"> 
+                    <div className="w-20 h-20 bg-linear-to-br from-wedding-terracotta to-wedding-terracotta-dark rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <MapPin className="w-10 h-10 text-white" />
                     </div>
                   </a>
@@ -96,7 +96,7 @@ export function Home() {
                     13415 Grand Island Rd<br />Walnut Grove, CA 95690
                   </p>
                 </div>
-                
+
                 {/* Celebration */}
                 <div className="group bg-wedding-cream/50 backdrop-blur-sm p-8 rounded-2xl text-center hover:bg-wedding-cream transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-wedding-terracotta/10">
                   <div className="w-20 h-20 bg-linear-to-br from-wedding-terracotta to-wedding-terracotta-dark rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
@@ -134,11 +134,11 @@ export function Home() {
 
                 <div className="bg-white/60 backdrop-blur-sm p-10 md:p-12 rounded-3xl shadow-xl border border-wedding-terracotta/10">
                   <p className="font-info text-xl md:text-2xl text-wedding-charcoal leading-relaxed mb-6 text-center">
-                    From a chance meeting at a coffee shop to adventures around the world, 
+                    From a chance meeting at a coffee shop to adventures around the world,
                     our journey together has been filled with laughter, love, and countless memories.
                   </p>
                   <p className="font-info text-xl md:text-2xl text-wedding-charcoal leading-relaxed mb-8 text-center">
-                    Now, we're excited to begin our next chapter as husband and wife, 
+                    Now, we're excited to begin our next chapter as husband and wife,
                     and we can't wait to celebrate this special day with all of you.
                   </p>
 
@@ -219,7 +219,7 @@ export function Home() {
             />
             <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-black/60" />
           </div>
-          
+
           <div className="relative z-10 text-center px-4 animate-fade-in">
             <p className="font-nav text-white/90 text-sm md:text-base tracking-[0.3em] uppercase mb-6 drop-shadow-lg">
               We're Getting Married
@@ -233,7 +233,7 @@ export function Home() {
               <div className="h-px w-16 bg-white/60"></div>
             </div>
             <p className="font-info text-2xl md:text-3xl text-white/95 mb-12 drop-shadow-lg">
-              March XX, 2027
+              April 30, 2027
             </p>
             <Link to="/rsvp">
               <Button className="bg-wedding-terracotta text-white font-nav font-semibold px-10 py-7 text-lg rounded-full hover:bg-wedding-terracotta-dark transition-all duration-300 uppercase tracking-wider shadow-2xl hover:shadow-wedding-terracotta/50 hover:scale-105">
@@ -247,7 +247,7 @@ export function Home() {
         <section className="py-24 bg-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-64 h-64 bg-wedding-cream/50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-wedding-terracotta/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
               <h2 className="font-couple-name text-6xl md:text-7xl text-wedding-terracotta mb-4">
@@ -275,11 +275,11 @@ export function Home() {
                   </p>
                 </div>
               </div>
-              
+
               {/* Where */}
               <div className="group bg-wedding-cream/50 backdrop-blur-sm p-8 rounded-2xl text-center hover:bg-wedding-cream transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-wedding-terracotta/10">
                 <a href='https://www.google.com/maps/place/Grand+Island+Mansion/@38.2691108,-121.5878428,17z/data=!3m1!4b1!4m6!3m5!1s0x809ab48b824ed3a3:0xaa13cdbe8ee84038!8m2!3d38.2691108!4d-121.5878428!16s%2Fg%2F1tg6vyrs?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D' target="_blank" rel="noopener noreferrer">
-                  <div className="w-20 h-20 bg-linear-to-br from-wedding-terracotta to-wedding-terracotta-dark rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg"> 
+                  <div className="w-20 h-20 bg-linear-to-br from-wedding-terracotta to-wedding-terracotta-dark rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <MapPin className="w-10 h-10 text-white" />
                   </div>
                 </a>
@@ -293,7 +293,7 @@ export function Home() {
                   13415 Grand Island Rd<br />Walnut Grove, CA 95690
                 </p>
               </div>
-              
+
               {/* Celebration */}
               <div className="group bg-wedding-cream/50 backdrop-blur-sm p-8 rounded-2xl text-center hover:bg-wedding-cream transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-wedding-terracotta/10">
                 <div className="w-20 h-20 bg-linear-to-br from-wedding-terracotta to-wedding-terracotta-dark rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
@@ -330,13 +330,10 @@ export function Home() {
               </div>
 
               <div className="bg-white/60 backdrop-blur-sm p-10 md:p-12 rounded-3xl shadow-xl border border-wedding-terracotta/10">
-                <p className="font-info text-xl md:text-2xl text-wedding-charcoal leading-relaxed mb-6 text-center">
-                  From a chance meeting at a coffee shop to adventures around the world, 
-                  our journey together has been filled with laughter, love, and countless memories.
-                </p>
+
                 <p className="font-info text-xl md:text-2xl text-wedding-charcoal leading-relaxed mb-8 text-center">
-                  Now, we're excited to begin our next chapter as husband and wife, 
-                  and we can't wait to celebrate this special day with all of you.
+                  Our story is a slamming screen door. Sneaking out late, tapping on her window. When we're on the phone
+                  and we talk real slow, because it's late and your mama don't know.
                 </p>
 
                 <div className="text-center">

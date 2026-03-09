@@ -18,14 +18,8 @@ export function Footer() {
               Glieselle & Kyle
             </h3>
             <p className="font-info text-lg mb-6 text-wedding-cream/90">
-              [Wedding Date]
+              April 30, 2027
             </p>
-            <div className="flex items-center justify-center md:justify-start gap-2">
-              <Heart className="w-5 h-5 text-wedding-terracotta fill-wedding-terracotta" />
-              <span className="font-nav text-sm text-wedding-cream/80">
-                Celebrating Love
-              </span>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -61,21 +55,14 @@ export function Footer() {
               Get in Touch
             </h4>
             <div className="space-y-4 font-info">
-              <a 
-                href="mailto:wedding@example.com" 
+              <a
+                href="mailto:kyleglieslle@gmail.com"
                 className="flex items-center justify-center md:justify-end gap-2 hover:text-wedding-terracotta transition-colors text-wedding-cream/90"
               >
                 <Mail className="w-4 h-4" />
-                <span>wedding@example.com</span>
+                <span>kyleglieslle@gmail.com</span>
               </a>
-              <a 
-                href="tel:+1234567890" 
-                className="flex items-center justify-center md:justify-end gap-2 hover:text-wedding-terracotta transition-colors text-wedding-cream/90"
-              >
-                <Phone className="w-4 h-4" />
-                <span>(123) 456-7890</span>
-              </a>
-              <a 
+              <a
                 href="https://www.google.com/maps/place/Grand+Island+Mansion/@38.2691108,-121.5878428,17z/data=!3m1!4b1!4m6!3m5!1s0x809ab48b824ed3a3:0xaa13cdbe8ee84038!8m2!3d38.2691108!4d-121.5878428!16s%2Fg%2F1tg6vyrs?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -84,54 +71,6 @@ export function Footer() {
                 <MapPin className="w-4 h-4 shrink-0" />
                 <span className="text-sm">13415 Grand Island Rd, Walnut Grove, CA 95690</span>
               </a>
-            </div>
-
-            {/* Social Media */}
-            <div className="flex justify-center md:justify-end gap-4 mt-8">
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="hover:bg-wedding-terracotta/20 hover:text-wedding-terracotta transform hover:scale-110 transition-all duration-300"
-              >
-                <a 
-                  href="#" 
-                  aria-label="Instagram"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    role="img"
-                    viewBox="0 0 24 24"
-                    className="w-5 h-5 fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d={siInstagram.path} />
-                  </svg>
-                </a>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="hover:bg-wedding-terracotta/20 hover:text-wedding-terracotta transform hover:scale-110 transition-all duration-300"
-              >
-                <a 
-                  href="#" 
-                  aria-label="Facebook"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    role="img"
-                    viewBox="0 0 24 24"
-                    className="w-5 h-5 fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d={siFacebook.path} />
-                  </svg>
-                </a>
-              </Button>
             </div>
           </div>
         </div>
