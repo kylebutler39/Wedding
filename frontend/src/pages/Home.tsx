@@ -303,10 +303,10 @@ export function Home() {
                   Celebration
                 </h3>
                 <p className="font-info text-2xl font-semibold text-wedding-terracotta mb-2">
-                  Ceremony & Reception
+                  Reception
                 </p>
                 <p className="font-info text-lg text-wedding-sage-dark mt-3">
-                  to follow
+                  To follow
                 </p>
               </div>
             </div>
