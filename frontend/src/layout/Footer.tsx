@@ -1,8 +1,6 @@
-import { Heart, Mail, Phone, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Heart, Mail, MapPin } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
-import { siInstagram, siFacebook } from 'simple-icons/icons';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
