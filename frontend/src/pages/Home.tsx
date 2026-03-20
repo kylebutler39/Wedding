@@ -106,10 +106,10 @@ export function Home() {
                     Celebration
                   </h3>
                   <p className="font-info text-2xl font-semibold text-wedding-terracotta mb-2">
-                    Ceremony & Reception
+                    Reception
                   </p>
                   <p className="font-info text-lg text-wedding-sage-dark mt-3">
-                    to follow
+                    To follow
                   </p>
                 </div>
               </div>
@@ -134,12 +134,8 @@ export function Home() {
 
                 <div className="bg-white/60 backdrop-blur-sm p-10 md:p-12 rounded-3xl shadow-xl border border-wedding-terracotta/10">
                   <p className="font-info text-xl md:text-2xl text-wedding-charcoal leading-relaxed mb-6 text-center">
-                    From a chance meeting at a coffee shop to adventures around the world,
-                    our journey together has been filled with laughter, love, and countless memories.
-                  </p>
-                  <p className="font-info text-xl md:text-2xl text-wedding-charcoal leading-relaxed mb-8 text-center">
-                    Now, we're excited to begin our next chapter as husband and wife,
-                    and we can't wait to celebrate this special day with all of you.
+                    Our story is a slamming screen door. Sneaking out late, tapping on her window. When we're on the phone
+                    and we talk real slow, because it's late and your mama don't know.
                   </p>
 
                   <div className="text-center">
