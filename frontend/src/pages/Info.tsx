@@ -1,4 +1,4 @@
-import { MapPin, Shirt, Calendar, Hotel, Car, Gift, Phone, Camera, Hash } from 'lucide-react'
+import { MapPin, Shirt, Calendar, Hotel, Car, Gift, Phone, Camera } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
