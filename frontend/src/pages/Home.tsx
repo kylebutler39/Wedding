@@ -266,12 +266,12 @@ export function Home() {
                   When
                 </h3>
                 <p className="font-info text-2xl font-semibold text-wedding-terracotta mb-2">
-                  March XX, 2027
+                  April 30, 2027
                 </p>
                 <div className="flex items-center justify-center gap-2 text-wedding-charcoal mt-3">
                   <Clock className="w-4 h-4" />
                   <p className="font-info text-lg">
-                    X:00 PM
+                    6:00 PM
                   </p>
                 </div>
               </div>
